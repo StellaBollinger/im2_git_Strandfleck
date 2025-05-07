@@ -80,6 +80,8 @@ icon =
 Weather_container.innerHTML += `
     <img src="${icon}" alt="${text}" width="100">
     <p>${text}</p>`;
+
+    
 // algorithmus für die Räume
 let wind_speed = data.current.wind_speed_10m;
 let temperature = data.current.temperature_2m;
