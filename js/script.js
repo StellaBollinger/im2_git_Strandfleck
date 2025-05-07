@@ -23,6 +23,7 @@ Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
                                 <p>Wettercode: ${data.current.weather_code}</p>`;
 // OpenMeteo Loader Ende
 
+// Wettercode: 0 = klar, 1-3 = bewölkt, 45-48 = nebel, 51-55 = Nieselregen, 61-65 = Regen, 66-67 = Eisregen, 71-75 = Schnee, 77-86 = Schneeflocken, 80-82 = Regenschauer, 95-99 = Gewitter
 //if / else if / else für die Weather codes. 
 let icon = '';
 let text = '';
@@ -81,7 +82,7 @@ Weather_container.innerHTML += `
     <img src="${icon}" alt="${text}" width="100">
     <p>${text}</p>`;
 
-    
+
 // algorithmus für die Räume
 let wind_speed = data.current.wind_speed_10m;
 let temperature = data.current.temperature_2m;
