@@ -24,3 +24,62 @@ Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
 // OpenMeteo Loader Ende
 
 //if / else if / else für die Weather codes. 
+
+
+// algorithmus für die Räume
+let wind_speed = 0;
+let temperature = 0;
+let rain = 0;
+
+const options = [
+    { name: 'cafete',
+        hour_min: 23,
+        hour_max: 04,
+        temperature_min: false,
+        temperature_max: 25,
+        rain_max: false
+    },
+    { name: 'Queer feministischer Raum',
+        hour_min: 14
+        hour_max: 04,
+        temperature_min: false,
+        temperature_max: 30,
+        rain_max: false
+    },
+    { name: 'Druckerei Reitschule',
+        hour_min: 10,
+        hour_max: 17,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Infoladen Borke',
+        hour_min: 17,
+        hour_max: 21,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Kino in der Reitschule',
+        hour_min: 16,
+        hour_max: 22,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Tojo Theater',
+        hour_min: 16,
+        hour_max: 22,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Kino in der Reitschule',
+        hour_min: 16,
+        hour_max: 22,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    
+]
