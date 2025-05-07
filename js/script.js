@@ -35,9 +35,14 @@ Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
 //     text = 'Wolkig'
 
 // algorithmus für die Räume
-let wind_speed = 0;
-let temperature = 0;
-let rain = 0;
+let wind_speed = data.current.wind_speed_10m;
+let temperature = data.current.temperature_2m;
+let rain = data.current.precipitation;
+
+// Ermittelt die aktuelle Uhrzeit als Ganze Zahl. Es geht von 0 bis 23.
+// das bedeutet auch, wenn ein Raum in der liste hour_max 17 hat, dass es bis 17.59 angezeigt wird.
+// konsequenterweise, müssen wir also die schliesszeit und öffnungszeit immer eine Stunde Vor verlegen 
+const currentHour = new Date().getHours();
 
 const options = [
     { name: 'cafete',
@@ -48,7 +53,7 @@ const options = [
         rain_max: false
     },
     { name: 'Queer feministischer Raum',
-        hour_min: 14
+        hour_min: 14,
         hour_max: 4,
         temperature_min: false,
         temperature_max: 30,
@@ -146,8 +151,45 @@ const options = [
         rain_max: 0
     },
 ];
-const possible_options = options. filter (option => {
-return option.temperature_max > 20;
-})
-console.log(possible_options);
+
+// checkCondition vergleicht. Wenn condition === false heisst das, dass keine bedingung gestzt wird und die antwort immer true ist.
+//  wenn nicht false, wird die bedingung geprüft mit dem comparator
+// heisst, im sous le pont regen egal -> rain_max=false -> keine bedingung -> wird ignoriert, resp immer true
+// aber auf dem Vorplatz ist regen relevant -> rain_max=0, dann wird die bedingung geprüft und muss <= 0 sein
+
+function checkCondition(value, condition, comparator) {
+    if (condition === false) return true;
+    return comparator(value, condition);
+}
+
+// hier wird die Liste der möglichen Optionen gefiltert
+// timeOK prüft, ob die zeit zwischen hour_min und hour_max öiegt 
+// option.hour_min > option.hour_max behandelt den Spezialfall ab, wen ein Raum über Mitternacht offen hat 
+const possible_options = options.filter(option => {
+    const timeOk = checkCondition(currentHour, option.hour_min, (a, b) => a >= b) &&
+                   checkCondition(currentHour, option.hour_max, (a, b) => {
+                       // Sonderfall: Nachtstunden (z.B. max = 4)
+                       if (option.hour_min > option.hour_max) {
+                           return a <= b || a >= option.hour_min;
+                       }
+                       return a <= b;
+                   });
+
+    const tempMinOk = checkCondition(temperature, option.temperature_min, (a, b) => a >= b);
+    const tempMaxOk = checkCondition(temperature, option.temperature_max, (a, b) => a <= b);
+    const rainOk = checkCondition(rain, option.rain_max, (a, b) => a <= b);
+    
+    // tempMinOk: Ist Temperatur mindestens der geforderte Mindestwert?
+    // tempMaxOk: Ist Temperatur höchstens der erlaubte Maximalwert?
+    // rainOk: Ist der Regenwert unterhalb des Limits (z. B. 0 mm)?
+   
+    return timeOk && tempMinOk && tempMaxOk && rainOk;
+});
+
+// mit "return timeOk && tempMinOk && tempMaxOk && rainOk;" wird ein raum nur dann behalte, wenn er alle bedingungen erfüllt"
+
+console.log("Mögliche Optionen bei aktuellem Wetter:");
+possible_options.forEach(option => {
+    console.log(option.name);
+});
 // hier wird die Liste der möglichen Optionen angezeigt
