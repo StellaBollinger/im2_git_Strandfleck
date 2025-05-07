@@ -24,7 +24,15 @@ Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
 // OpenMeteo Loader Ende
 
 //if / else if / else für die Weather codes. 
-
+// if (weather_code = 1 || weather_code = 2) {
+//     icon =
+//     'clear.svg'
+//     text = 'Klarer Himmel'
+//     } else if (weather_code
+//     1 3) {
+//     icon =
+//     'clouds.svg'
+//     text = 'Wolkig'
 
 // algorithmus für die Räume
 let wind_speed = 0;
@@ -34,14 +42,14 @@ let rain = 0;
 const options = [
     { name: 'cafete',
         hour_min: 23,
-        hour_max: 04,
+        hour_max: 4,
         temperature_min: false,
         temperature_max: 25,
         rain_max: false
     },
     { name: 'Queer feministischer Raum',
         hour_min: 14
-        hour_max: 04,
+        hour_max: 4,
         temperature_min: false,
         temperature_max: 30,
         rain_max: false
@@ -74,12 +82,72 @@ const options = [
         temperature_max: false,
         rain_max: false
     },
-    { name: 'Kino in der Reitschule',
-        hour_min: 16,
-        hour_max: 22,
+    { name: 'Restaurant Sous le Pont',
+        hour_min: 11,
+        hour_max: 1,
         temperature_min: false,
         temperature_max: false,
         rain_max: false
     },
-    
-]
+    { name: 'Rössli Bar',
+        hour_min: 22,
+        hour_max: 4,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Grosse Halle',
+        hour_min: 11,
+        hour_max: 1,
+        temperature_min: false,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Innenhof',
+        hour_min: 11,
+        hour_max: 1,
+        temperature_min: 15,
+        temperature_max: false,
+        rain_max: 0
+    },
+    { name: 'Vorplatz',
+        hour_min: false,
+        hour_max: false,
+        temperature_min: 15,
+        temperature_max: false,
+        rain_max: 0
+    },
+    { name: 'Skate Bowl',
+        hour_min: false,
+        hour_max: false,
+        temperature_min: 15,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Durchgang',
+        hour_min: 11,
+        hour_max: 1,
+        temperature_min: 15,
+        temperature_max: false,
+        rain_max: false
+    },
+    { name: 'Gelateria Eisbrecher',
+        hour_min: 17,
+        hour_max: 22,
+        temperature_min: 20,
+        temperature_max: false,
+        rain_max: 0
+    },
+    { name: 'Dachstock',
+        hour_min: 14,
+        hour_max: 5,
+        temperature_min: false,
+        temperature_max: 25,
+        rain_max: 0
+    },
+];
+const possible_options = options. filter (option => {
+return option.temperature_max > 20;
+})
+console.log(possible_options);
+// hier wird die Liste der möglichen Optionen angezeigt
