@@ -24,56 +24,62 @@ Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
 // OpenMeteo Loader Ende
 
 //if / else if / else für die Weather codes. 
-if (weather_code === 0 || weather_code === 0) {
+let icon = '';
+let text = '';
+
+if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     icon =
     '/Weather_Code_svg/Clear_sky_0.svg'
     text = 'Klarer Himmel'
-    } else if (weather_code === 1 || weather_code === 2 || weather_code === 3) {
+    } else if (data.current.weather_code === 1 || data.current.weather_code === 2 || data.current.weather_code === 3) {
     icon =
     '/Weather_Code_svg/overcast_1_2_3.svg'
     text = 'Wolkig'
-} else if (weather_code === 45 || weather_code === 48) {
+} else if (data.current.weather_code === 45 || data.current.weather_code === 48) {
     icon = 
     '/Weather_Code_svg/Fog_45_48.svg'
     text = 'Nebel'
-} else if (weather_code === 51 || weather_code === 53 || weather_code === 55) {
+} else if (data.current.weather_code === 51 || data.current.weather_code === 53 || data.current.weather_code === 55) {
     icon = 
     '/Weather_Code_svg/Drizzle_51_53_55.svg'
     text = 'Nieselregen'
-} else if (weather_code === 61 || weather_code === 63 || weather_code === 65) {
+} else if (data.current.weather_code === 61 || data.current.weather_code === 63 || wdata.current.eather_code === 65) {
     icon = 
     '/Weather_Code_svg/Rain_61_63_65.svg'
     text = 'Regen'
-} else if (weather_code = 66 || weather_code === 67) {
+} else if (data.current.weather_code === 66 || data.current.weather_code === 67) {
     icon = 
     '/Weather_Code_svg/Freezing_rain_66_67.svg'
     text = 'Eisregen'
-} else if (weather_code = 71 || weather_code === 73 || weather_code === 75) {
+} else if (data.current.weather_code === 71 || data.current.weather_code === 73 || data.current.weather_code === 75) {
     icon = 
     '/Weather_Code_svg/Snow_71_73_75.svg'
     text = 'Schnee'
-} else if (weather_code = 77 || weather_code === 85 || weather_code === 86) {
+} else if (data.current.weather_code === 77 || data.current.weather_code === 85 || data.current.weather_code === 86) {
     icon =
     '/Weather_Code_svg/Snow_grains_77_85_86.svg'
     text = 'Schneeflocken'
-} else if (weather_code = 80 || weather_code === 81 || weather_code === 82) {
+} else if (data.current.weather_code === 80 || data.current.weather_code === 81 || data.current.weather_code === 82) {
     icon =
     '/Weather_Code_svg/Rain_showers_80_81_82.svg'
     text = 'Regenschauer'
-} else if (weather_code = 95 || weather_code === 96 || weather_code === 99) {
+} else if (data.current.weather_code === 95 || data.current.weather_code === 96 || data.current.weather_code === 99) {
     icon =
     '/Weather_Code_svg/Thunderstorm_95_96_99.svg'
     text = 'Gewitter'
-} else if (weather_code === 56 || weather_code === 57) {
+} else if (data.current.weather_code === 56 || data.current.weather_code === 57) {
 icon = 
     '/Weather_Code_svg/freezing_drizzle_56_57.svg'
     text = 'Kalter Nieselregen'
-} else if (weather_code === 85 || weather_code === 86) {
+} else if (data.current.weather_code === 85 || data.current.weather_code === 86) {
     icon = 
     '/Weather_Code_svg/Snow_showers_85_86.svg'
     text = 'Schneeschauer'
 }
 
+Weather_container.innerHTML += `
+    <img src="${icon}" alt="${text}" width="100">
+    <p>${text}</p>`;
 // algorithmus für die Räume
 let wind_speed = data.current.wind_speed_10m;
 let temperature = data.current.temperature_2m;
