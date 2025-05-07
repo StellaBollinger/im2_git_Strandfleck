@@ -202,7 +202,7 @@ const options = [
 ];
 
 // checkCondition vergleicht. Wenn condition === false heisst das, dass keine bedingung gestzt wird und die antwort immer true ist.
-//  wenn nicht false, wird die bedingung geprüft mit dem comparator
+// wenn nicht false, wird die bedingung geprüft mit dem comparator
 // heisst, im sous le pont regen egal -> rain_max=false -> keine bedingung -> wird ignoriert, resp immer true
 // aber auf dem Vorplatz ist regen relevant -> rain_max=0, dann wird die bedingung geprüft und muss <= 0 sein
 
@@ -237,8 +237,38 @@ const possible_options = options.filter(option => {
 
 // mit "return timeOk && tempMinOk && tempMaxOk && rainOk;" wird ein raum nur dann behalte, wenn er alle bedingungen erfüllt"
 
-console.log("Mögliche Optionen bei aktuellem Wetter:");
-possible_options.forEach(option => {
-    console.log(option.name);
-});
-// hier wird die Liste der möglichen Optionen angezeigt
+// console.log("Mögliche Optionen bei aktuellem Wetter:");
+// possible_options.forEach(option => {
+//     console.log(option.name);
+// });
+// hier könnte die Liste aller möglichen Optionen in der Konsole ausgegeben werden
+
+// possible_options ist die liste der möglichen räume
+// possible_options.length gibt die anzahl der möglichen räume an
+// wenn mindestens ein raum passt, geht der code weiter, sonst kommt die nachricht das kein raum passt (wegen "else")
+
+if (possible_options.length > 0) {
+    const randomIndex = Math.floor(Math.random() * possible_options.length);
+    const selectedOption = possible_options[randomIndex];
+
+// Math.random() gibt eine Zahl zwischen 0 und 1 zurück (z. B. 0.732).
+// Multipliziert mit der Anzahl möglicher Optionen (possible_options.length).
+// → z. B. 0.732 × 4 = 2.928
+// Math.floor(...) rundet ab → daraus wird 2.
+// Somit bekommst du eine Zahl zwischen 0 und (Anzahl - 1) → ein gültiger Index im Array.
+// mit selectedOption wird der zufällig ausgewählte Raum aus der Liste geholt 
+// So ist zb possible_options[2] der dritte Raum in der Liste
+
+    console.log("Zufällig ausgewählter Raum:");
+    console.log(selectedOption.name);
+    // hier wird der Random gewählte Raum in der Konsole angezeigt 
+  
+    // Hier haben wir einen div mit der id='result_container' im HTML gemacht, so wird es nicht nur in der Konsole sondern auch im HTML angezeigt 
+   const resultContainer = document.querySelector('#result_container');
+   resultContainer.innerHTML = `<h3>Empfohlener Raum:</h3><p>${selectedOption.name}</p>`;
+} else {
+   console.log("Keine passenden Räume gefunden.");
+   const resultContainer = document.querySelector('#result_container');
+   resultContainer.innerHTML = `<p>Leider passt aktuell kein Raum zu den Wetterbedingungen.</p>`;
+}
+
