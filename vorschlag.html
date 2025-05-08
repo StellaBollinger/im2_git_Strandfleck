@@ -4,15 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura:wght@500&display=swap" />
   <title>Hier wird gefetcht</title>
 </head>
 <body>
   <h1>Hoi Reitschule Wetter aber jetzt für echt </h1>
   <script type="module" src="js/script.js"></script>
-  <section>
-    <div id="weather_container"></div>
-    <div id="result_container"></div>
+
+  <section id ="weather_container" class="weather_container">
+    <!-- //Wird mit JS befüllt.  -->
+    <div class="wetter-widget-child">
+    </div>
+    <div class="mm-regen-erwartet">0mm Regen erwartet</div>
+    <div class="mini">
+        <div class="minirain">
+            <img class="vector-icon" alt="" src="Vector.svg">
+            
+        </div>
+    </div>
+    <div class="kein-wind">kein Wind</div>
+    <div class="mini1">
+        <div class="minirain">
+            <img class="miniwindy-icon" alt="" src="mini/windy.png">
+            
+        </div>
+    </div>
+    <div class="leicht-bewlkt">leicht bewölkt</div>
+    <img class="clear-cloudy-icon" alt="" src="clear-cloudy.svg">
+    
+    <div class="hot">
+        <img class="hot-icon" alt="" src="hot.png">
+        
+    </div>
+    <div class="c">21°C</div>
+    <div class="wetter-widget-item">
+    </div>
+    <div class="wetter-in-bern">WETTER IN BERN</div>
+</div>
+
+
   </section>
+
+  <button id="scroll_to_result">Zeige Raum-Empfehlung</button>
+
+  <div id ="result_container">
+    <!-- //Wird mit JS befüllt.  -->
+  </div>
   <script type="module" src="js/script.js"></script>
 </body>
-</html>
+</html> 

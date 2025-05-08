@@ -16,11 +16,11 @@ console.log(data); // gibt die Daten der API oder false in der Konsole aus
 
 // unsere Wetterdaten ins HTML/DOM einfüllen
 const Weather_container = document.querySelector('#weather_container');
-Weather_container.innerHTML = `<h2>Aktuelles Wetter</h2>
-                                <p>Temperatur: ${data.current.temperature_2m}°C</p>
-                                <p>Windgeschwindigkeit: ${data.current.wind_speed_10m} km/h</p>
-                                <p>Niederschlag: ${data.current.precipitation} mm</p>
-                                <p>Wettercode: ${data.current.weather_code}</p>`;
+Weather_container.innerHTML = 
+                            `<p>Temperatur: ${data.current.temperature_2m}°C</p>
+                             <p>Windgeschwindigkeit: ${data.current.wind_speed_10m} km/h</p>
+                            <p>Niederschlag: ${data.current.precipitation} mm</p>
+                            <p>Wettercode: ${data.current.weather_code}</p>`;
 // OpenMeteo Loader Ende
 
 // Wettercode: 0 = klar, 1-3 = bewölkt, 45-48 = nebel, 51-55 = Nieselregen, 61-65 = Regen, 66-67 = Eisregen, 71-75 = Schnee, 77-86 = Schneeflocken, 80-82 = Regenschauer, 95-99 = Gewitter
@@ -272,3 +272,7 @@ if (possible_options.length > 0) {
    resultContainer.innerHTML = `<p>Leider passt aktuell kein Raum zu den Wetterbedingungen.</p>`;
 }
 
+document.querySelector('#scroll_to_result').addEventListener('click', () => {
+    document.querySelector('#result_container').scrollIntoView({ behavior: 'smooth' });
+  });
+  
