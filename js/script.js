@@ -65,11 +65,7 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     text = 'Klarer Himmel'
     } else if (data.current.weather_code === 1 || data.current.weather_code === 2 || data.current.weather_code === 3) {
     icon =
-<<<<<<< HEAD
-    '/Weather_Code_svg/overcast 1_2_3.svg'
-=======
     '/weather_icons/overcast_1_2_3.svg'
->>>>>>> 067b13d07da634da686343eb247bf85e0fb45b8f
     text = 'Wolkig'
 } else if (data.current.weather_code === 45 || data.current.weather_code === 48) {
     icon = 
