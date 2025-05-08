@@ -61,51 +61,51 @@ let text = '';
 
 if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     icon =
-    '/weather_icons/clear_sky_0.svg'
+    '/weather_icons/clear_sky_0.png'
     text = 'Klarer Himmel'
     } else if (data.current.weather_code === 1 || data.current.weather_code === 2 || data.current.weather_code === 3) {
     icon =
-    '/weather_icons/overcast_1_2_3.svg'
+    '/weather_icons/overcast_1_2_3.png'
     text = 'Wolkig'
 } else if (data.current.weather_code === 45 || data.current.weather_code === 48) {
     icon = 
-    '/weather_icons/fog_45_48.svg'
+    '/weather_icons/fog_45_48.png'
     text = 'Nebel'
 } else if (data.current.weather_code === 51 || data.current.weather_code === 53 || data.current.weather_code === 55) {
     icon = 
-    '/weather_icons/drizzle_51_53_55.svg'
+    '/weather_icons/drizzle_51_53_55.png'
     text = 'Nieselregen'
 } else if (data.current.weather_code === 61 || data.current.weather_code === 63 || data.current.eather_code === 65) {
     icon = 
-    '/weather_icons/rain_61_63_65.svg'
+    '/weather_icons/rain_61_63_65.png'
     text = 'Regen'
 } else if (data.current.weather_code === 66 || data.current.weather_code === 67) {
     icon = 
-    '/weather_icons/freezing_rain_66_67.svg'
+    '/weather_icons/freezing_rain_66_67.png'
     text = 'Eisregen'
 } else if (data.current.weather_code === 71 || data.current.weather_code === 73 || data.current.weather_code === 75) {
     icon = 
-    '/weather_icons/snow_71_73_75.svg'
+    '/weather_icons/snow_71_73_75.png'
     text = 'Schnee'
 } else if (data.current.weather_code === 77 || data.current.weather_code === 85 || data.current.weather_code === 86) {
     icon =
-    '/weather_icons/snow_grains_77_85_86.svg'
+    '/weather_icons/snow_grains_77_85_86.png'
     text = 'Schneeflocken'
 } else if (data.current.weather_code === 80 || data.current.weather_code === 81 || data.current.weather_code === 82) {
     icon =
-    '/weather_icons/rain_showers_80_81_82.svg'
+    '/weather_icons/rain_showers_80_81_82.png'
     text = 'Regenschauer'
 } else if (data.current.weather_code === 95 || data.current.weather_code === 96 || data.current.weather_code === 99) {
     icon =
-    '/weather_icons/thunderstorm_95_96_99.svg'
+    '/weather_icons/thunderstorm_95_96_99.png'
     text = 'Gewitter'
 } else if (data.current.weather_code === 56 || data.current.weather_code === 57) {
 icon = 
-    '/weather_icons/freezing_drizzle_56_57.svg'
+    '/weather_icons/freezing_drizzle_56_57.png'
     text = 'Kalter Nieselregen'
 } else if (data.current.weather_code === 85 || data.current.weather_code === 86) {
     icon = 
-    '/weather_icons/snow_showers_85_86.svg'
+    '/weather_icons/snow_showers_85_86.png'
     text = 'Schneeschauer'
 }
 
