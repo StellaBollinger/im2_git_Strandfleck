@@ -1,4 +1,4 @@
-/* Allgemeines Layout */
+Allgemeines Layout
 body {
 	margin: 0;
 	padding: 0;
@@ -22,6 +22,7 @@ body {
 	text-align: center;
 	color: #2b2d42;
 	margin-bottom: 1rem;
+	font-family: 'Work Sans', sans-serif;
   }
   
   h1 {
@@ -32,6 +33,7 @@ body {
   h2 {
 	font-size: 1.4rem;
 	color: #444;
+	font-family: 'Work Sans', sans-serif;
   }
   
   /* Wetterbox */
@@ -54,7 +56,9 @@ body {
 	height: auto;
 	margin: 1rem auto;
 	display: block;
+	font-family: 'Work Sans', sans-serif;
   }
+
   
   .celsius {
 	font-size: 2.4rem;

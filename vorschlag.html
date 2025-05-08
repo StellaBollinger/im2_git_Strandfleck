@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura:wght@500&display=swap" />
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura:wght@500&display=swap" /> -->
   <title>Hier wird gefetcht</title>
 </head>
 <body>
@@ -12,43 +12,34 @@
 
   <section id ="weather_container" class="weather_container">
     <!-- //Wird mit JS befüllt.  -->
-    <div class="wetter-widget-child">
-    </div>
-    <div class="rain_mm">100mm Regen erwartet</div>
-    <div class="mini">
-        <div class="minirain">
-            <img class="vector-icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-            
-        </div>
-    </div>
-    <div class="wind_speed">kein Wind</div>
-    <div class="mini1">
-        <div class="minirain">
-            <img class="miniwindy-icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-            
-        </div>
-    </div>
-    <!-- <div class="weather_code">fest bewölkt </div> -->
-    <img class="weather_icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-    
-    <div class="hot">
-        <img class="hot-icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-        
-    </div>
-    <div class="celsius"></div>
-    <div class="wetter-widget-item">
-    </div>
-    <div class="wetter-in-bern">WETTER IN BERN</div>
-</div>
+    <div class="wetter-in-bern"><h1>WETTER IN BERN</h1></div>
 
+    <h2>
+      <div class="celsius"></div>
+      <div class="temp_icon"></div>
+    </h2>
+ 
+    <h2> 
+      <div class="rain_mm">100mm Regen erwartet
+         <img class="rain_icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
+      </div>
+    </h2>
+
+    <h2>
+      <div class="wind_speed">kein Wind
+            <img class="wind_icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
+       </div> 
+    </h2>
 
   </section>
 
-  <button id="scroll_to_result">Zeige Raum-Empfehlung</button>
+  <button id="scroll_to_result" class="button">Zeige Raum-Empfehlung</button>
 
-  <div id ="result_container">
+  <h2>
+    <div id ="result_container" class="recommendation">
     <!-- //Wird mit JS befüllt.  -->
-  </div>
+    </div>
+  </h2>
   <script type="module" src="js/script.js"></script>
 </body>
 </html> 

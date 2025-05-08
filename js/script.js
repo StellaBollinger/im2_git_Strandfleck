@@ -112,6 +112,7 @@ icon =
 Weather_container.innerHTML += `
     <img src="${icon}" width="100">
      <p>${text}</p>`;
+    
 
     // const weatherIconElement = document.querySelector('.weather_icon');
     // if (weatherIconElement) {
