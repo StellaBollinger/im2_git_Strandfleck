@@ -15,13 +15,42 @@ const data = await loadWeather();
 console.log(data); // gibt die Daten der API oder false in der Konsole aus
 
 // unsere Wetterdaten ins HTML/DOM einfüllen
-const Weather_container = document.querySelector('#weather_container');
-Weather_container.innerHTML = 
+const Weather_container = document.querySelector('.weather_container');
+//  
                             `<p>Temperatur: ${data.current.temperature_2m}°C</p>
                              <p>Windgeschwindigkeit: ${data.current.wind_speed_10m} km/h</p>
-                            <p>Niederschlag: ${data.current.precipitation} mm</p>
-                            <p>Wettercode: ${data.current.weather_code}</p>`;
+                             <p>Niederschlag: ${data.current.precipitation} mm</p>
+                             <p>Wettercode: ${data.current.weather_code}</p>`;
 // OpenMeteo Loader Ende
+const temp = document.querySelector('.celsius');
+if (temp) {
+    temp.innerText = `${data.current.temperature_2m}°C`;
+}
+
+const wind = document.querySelector('.wind_speed');
+if (wind) {
+    wind.innerText = `${data.current.wind_speed_10m} km/h`;
+}
+
+const regen = document.querySelector('.rain_mm');
+if (regen) {
+    regen.innerText = `${data.current.precipitation} mm`;
+}
+
+// Hier wird eine Zahl angezeigt anstelle von text: FEHLER
+const weather_code = document.querySelector('.weather_code');
+if (weather_code) {
+    weather_code.innerText = `${data.current.weather_code}`;
+}
+
+// Bild anzeige geht gar nicht: FEHLER
+// const weather_bild = document.querySelector('.weather_icon');
+// if (weather_bild) {
+//     weather_bild.innerHTML += `<img src="${icon}" alt="${text}"`;
+//     weather_bild.innerHTML += `<p>${text}</p>`
+// }
+
+
 
 // Wettercode: 0 = klar, 1-3 = bewölkt, 45-48 = nebel, 51-55 = Nieselregen, 61-65 = Regen, 66-67 = Eisregen, 71-75 = Schnee, 77-86 = Schneeflocken, 80-82 = Regenschauer, 95-99 = Gewitter
 //if / else if / else für die Weather codes. 
@@ -44,7 +73,7 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     icon = 
     '/weather_icons/drizzle_51_53_55.svg'
     text = 'Nieselregen'
-} else if (data.current.weather_code === 61 || data.current.weather_code === 63 || wdata.current.eather_code === 65) {
+} else if (data.current.weather_code === 61 || data.current.weather_code === 63 || data.current.eather_code === 65) {
     icon = 
     '/weather_icons/rain_61_63_65.svg'
     text = 'Regen'

@@ -1,4 +1,4 @@
-
+/* 
 .wetter-widget-child {
   	position: absolute;
   	height: 102.82%;
@@ -12,6 +12,7 @@
   	border: 5px solid #000;
   	box-sizing: border-box;
 }
+/* /* /*  *
 .mm-regen-erwartet {
   	position: absolute;
   	height: 20.34%;
@@ -20,7 +21,8 @@
   	left: 75.73%;
   	font-weight: 500;
   	display: inline-block;
-}
+} 
+	/*  *
 .vector-icon {
   	position: absolute;
   	height: 31.64%;
@@ -82,7 +84,7 @@
   	bottom: 34.18%;
   	left: 56.87%;
 }
-.leicht-bewlkt {
+.leicht-bewölkt {
   	position: absolute;
   	height: 9.04%;
   	width: 18.98%;
@@ -169,4 +171,4 @@
   	color: #000;
   	font-family: Futura;
 }
-
+  */
