@@ -37,11 +37,13 @@ if (regen) {
     regen.innerText = `${data.current.precipitation} mm`;
 }
 
-// Hier wird eine Zahl angezeigt anstelle von text: FEHLER
-const weather_code = document.querySelector('.weather_code');
-if (weather_code) {
-    weather_code.innerText = `${data.current.weather_code}`;
-}
+
+
+// // Hier wird eine Zahl angezeigt anstelle von text: FEHLER
+// const weather_code = document.querySelector('.weather_code');
+// if (weather_code) {
+//     weather_code.innerText = `${data.current.weather_code}`;
+// }
 
 // Bild anzeige geht gar nicht: FEHLER
 // const weather_bild = document.querySelector('.weather_icon');
@@ -63,7 +65,7 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     text = 'Klarer Himmel'
     } else if (data.current.weather_code === 1 || data.current.weather_code === 2 || data.current.weather_code === 3) {
     icon =
-    '/Weather_Code_svg/overcast_1_2_3.svg'
+    '/Weather_Code_svg/overcast 1_2_3.svg'
     text = 'Wolkig'
 } else if (data.current.weather_code === 45 || data.current.weather_code === 48) {
     icon = 
@@ -108,10 +110,15 @@ icon =
 }
 
 Weather_container.innerHTML += `
-    <img src="${icon}" alt="${text}" width="100">
-    <p>${text}</p>`;
+    <img src="${icon}" width="100">
+     <p>${text}</p>`;
 
-
+    // const weatherIconElement = document.querySelector('.weather_icon');
+    // if (weatherIconElement) {
+    //     weatherIconElement.src = icon;
+    //     weatherIconElement.alt = text;
+    // }
+    
 // algorithmus für die Räume
 let wind_speed = data.current.wind_speed_10m;
 let temperature = data.current.temperature_2m;

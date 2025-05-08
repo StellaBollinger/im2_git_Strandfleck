@@ -1,174 +1,107 @@
-/* 
-.wetter-widget-child {
-  	position: absolute;
-  	height: 102.82%;
-  	width: 100.97%;
-  	top: -1.41%;
-  	right: -0.48%;
-  	bottom: -1.41%;
-  	left: -0.48%;
-  	box-shadow: -20px 15px 10px #908383;
-  	background: linear-gradient(180deg, rgba(255, 94, 48, 0.2), rgba(0, 12, 175, 0.2)), #fff;
-  	border: 5px solid #000;
-  	box-sizing: border-box;
-}
-/* /* /*  *
-.mm-regen-erwartet {
-  	position: absolute;
-  	height: 20.34%;
-  	width: 19.56%;
-  	top: 74.29%;
-  	left: 75.73%;
-  	font-weight: 500;
-  	display: inline-block;
-} 
-	/*  *
-.vector-icon {
-  	position: absolute;
-  	height: 31.64%;
-  	width: 57.48%;
-  	top: 36.83%;
-  	right: 22.52%;
-  	bottom: 31.53%;
-  	left: 20%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.minirain {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	top: 0%;
-  	right: 0%;
-  	bottom: 0%;
-  	left: 0%;
-}
-.mini {
-  	position: absolute;
-  	height: 46.61%;
-  	width: 15.38%;
-  	top: 22.88%;
-  	right: 6.87%;
-  	bottom: 30.51%;
-  	left: 77.76%;
-}
-.kein-wind {
-  	position: absolute;
-  	height: 9.04%;
-  	width: 19.56%;
-  	top: 76.27%;
-  	left: 52.42%;
-  	font-weight: 500;
-  	display: inline-block;
-}
-.miniwindy-icon {
-  	position: absolute;
-  	height: 100%;
-  	width: 100%;
-  	top: 0%;
-  	right: 0%;
-  	bottom: 0%;
-  	left: 0%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-  	object-fit: cover;
-}
-.mini1 {
-  	position: absolute;
-  	height: 29.38%;
-  	width: 10.64%;
-  	top: 36.44%;
-  	right: 32.5%;
-  	bottom: 34.18%;
-  	left: 56.87%;
-}
-.leicht-bewölkt {
-  	position: absolute;
-  	height: 9.04%;
-  	width: 18.98%;
-  	top: 76.27%;
-  	left: 27.18%;
-  	font-weight: 500;
-  	display: inline-block;
-}
-.clear-cloudy-icon {
-  	position: absolute;
-  	height: 50.28%;
-  	width: 17.21%;
-  	top: 27.68%;
-  	right: 56.09%;
-  	bottom: 22.03%;
-  	left: 26.69%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-}
-.hot-icon {
-  	position: absolute;
-  	height: 72.9%;
-  	width: 39.55%;
-  	top: 16.67%;
-  	right: 31.29%;
-  	bottom: 10.43%;
-  	left: 29.16%;
-  	max-width: 100%;
-  	overflow: hidden;
-  	max-height: 100%;
-  	object-fit: cover;
-}
-.hot {
-  	position: absolute;
-  	height: 43.79%;
-  	width: 14.57%;
-  	top: 23.45%;
-  	right: 81.36%;
-  	bottom: 32.77%;
-  	left: 4.06%;
-}
-.c {
-  	position: absolute;
-  	height: 20.06%;
-  	width: 13.44%;
-  	top: 71.47%;
-  	left: 4.89%;
-  	font-size: 48px;
-  	letter-spacing: 0.1em;
-  	line-height: 64px;
-  	font-weight: 500;
-  	text-align: left;
-  	display: inline-block;
-}
-.wetter-widget-item {
-  	position: absolute;
-  	height: 0.56%;
-  	width: 43.81%;
-  	top: 20.62%;
-  	right: 26.6%;
-  	bottom: 78.81%;
-  	left: 29.59%;
-  	border-top: 2px solid #908383;
-  	box-sizing: border-box;
-}
-.wetter-in-bern {
-  	position: absolute;
-  	height: 14.97%;
-  	width: 87.33%;
-  	top: 3.39%;
-  	left: 7.06%;
-  	font-size: 48px;
-  	letter-spacing: 0.1em;
-  	font-weight: 500;
-  	display: inline-block;
-}
-.wetter-widget {
-  	width: 100%;
-  	position: relative;
-  	height: 354px;
-  	text-align: center;
-  	font-size: 24px;
-  	color: #000;
-  	font-family: Futura;
-}
-  */
+/* Allgemeines Layout */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Work Sans', sans-serif;
+	background: #f7f8fc;
+	color: #333;
+  }
+  
+  /* Container-Zentrale */
+  .container {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background: white;
+	border-radius: 16px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Überschriften */
+  h1, h2, h3 {
+	text-align: center;
+	color: #2b2d42;
+	margin-bottom: 1rem;
+  }
+  
+  h1 {
+	font-size: 2rem;
+	letter-spacing: 1px;
+  }
+  
+  h2 {
+	font-size: 1.4rem;
+	color: #444;
+  }
+  
+  /* Wetterbox */
+  .weather_container {
+	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
+	padding: 2rem;
+	border-radius: 20px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+	text-align: center;
+	margin-bottom: 2rem;
+  }
+  
+  .weather_container h3 {
+	font-size: 1.6rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  .weather_icon {
+	width: 70px;
+	height: auto;
+	margin: 1rem auto;
+	display: block;
+  }
+  
+  .celsius {
+	font-size: 2.4rem;
+	font-weight: bold;
+	color: #e76f51;
+	margin-top: 0.5rem;
+  }
+  
+  .wind_speed,
+  .rain_mm {
+	font-size: 1rem;
+	color: #444;
+	margin: 0.3rem 0;
+  }
+  
+  /* Raumempfehlung */
+  .recommendation {
+	background: #fdf1f1;
+	border-left: 6px solid #f47c7c;
+	padding: 1rem 1.5rem;
+	border-radius: 12px;
+	margin-bottom: 2rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Ladeanimation oder Placeholder */
+  .loading {
+	text-align: center;
+	font-size: 1.2rem;
+	color: #999;
+  }
+  
+  /* Buttons (optional) */
+  .button {
+	background: #f47c7c;
+	color: white;
+	border: none;
+	padding: 0.8rem 1.2rem;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+	background: #e76464;
+  }
+  
