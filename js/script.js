@@ -136,105 +136,119 @@ const options = [
         hour_max: 4,
         temperature_min: false,
         temperature_max: 25,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/cafete.png',
     },
     { name: 'Queer feministischer Raum',
         hour_min: 14,
         hour_max: 4,
         temperature_min: false,
         temperature_max: 30,
-        rain_max: false
+        rain_max: false,
+        iamge: '/raum_fotos/qfr.png',
     },
     { name: 'Druckerei Reitschule',
         hour_min: 10,
         hour_max: 17,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/druckerei.png',
     },
     { name: 'Infoladen Borke',
         hour_min: 17,
         hour_max: 21,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/infoladen.png',
     },
     { name: 'Kino in der Reitschule',
         hour_min: 16,
         hour_max: 22,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/kino.png',
     },
     { name: 'Tojo Theater',
         hour_min: 16,
         hour_max: 22,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/tojo.png',
     },
     { name: 'Restaurant Sous le Pont',
         hour_min: 11,
         hour_max: 1,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/souslepont.png',
     },
     { name: 'Rössli Bar',
         hour_min: 22,
         hour_max: 4,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/roessli.png',
     },
     { name: 'Grosse Halle',
         hour_min: 11,
         hour_max: 1,
         temperature_min: false,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/grossehalle.png',
     },
     { name: 'Innenhof',
         hour_min: 11,
         hour_max: 1,
         temperature_min: 15,
         temperature_max: false,
-        rain_max: 0
+        rain_max: 0,
+        image: '/raum_fotos/innenhof.png',
     },
     { name: 'Vorplatz',
         hour_min: false,
         hour_max: false,
         temperature_min: 15,
         temperature_max: false,
-        rain_max: 0
+        rain_max: 0,
+        image: '/raum_fotos/vorplatz.png',
     },
     { name: 'Skate Bowl',
         hour_min: false,
         hour_max: false,
         temperature_min: 15,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
     },
     { name: 'Durchgang',
         hour_min: 11,
         hour_max: 1,
         temperature_min: 15,
         temperature_max: false,
-        rain_max: false
+        rain_max: false,
+        image: '/raum_fotos/durchgang.png',
     },
     { name: 'Gelateria Eisbrecher',
         hour_min: 17,
         hour_max: 22,
         temperature_min: 20,
         temperature_max: false,
-        rain_max: 0
+        rain_max: 0,
+        image: '/raum_fotos/eisbrecher.png',
     },
     { name: 'Dachstock',
         hour_min: 14,
         hour_max: 5,
         temperature_min: false,
         temperature_max: 25,
-        rain_max: 0
+        rain_max: 0,
+        image: '/raum_fotos/dachstock.png',
     },
 ];
 
@@ -302,7 +316,13 @@ if (possible_options.length > 0) {
   
     // Hier haben wir einen div mit der id='result_container' im HTML gemacht, so wird es nicht nur in der Konsole sondern auch im HTML angezeigt 
    const resultContainer = document.querySelector('#result_container');
-   resultContainer.innerHTML = `<h3>Empfohlener Raum:</h3><p>${selectedOption.name}</p>`;
+ //  resultContainer.innerHTML = `<h3>Empfohlener Raum:</h3><p>${selectedOption.name}</p>`;
+ resultContainer.innerHTML = `
+  <h3>Empfohlener Raum:</h3>
+  <p>${selectedOption.name}</p>
+  ${selectedOption.image ? `<img src="${selectedOption.image}" alt="${selectedOption.name}" width="200">` : ''}
+`;
+
 } else {
    console.log("Keine passenden Räume gefunden.");
    const resultContainer = document.querySelector('#result_container');
