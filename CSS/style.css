@@ -6,14 +6,8 @@ Allgemeines Layout body {
 	color: #333;
 }
 
-/* Container-Zentrale */
-.container {
-	max-width: 800px;
-	margin: 2rem auto;
-	padding: 1.5rem;
-	background: white;
-	border-radius: 16px;
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+.body {
+	margin: 100%;
 }
 
 /* Überschriften */
@@ -21,6 +15,9 @@ h1 {
 	font-size: 2rem;
 	letter-spacing: 1px;
 	font-family: 'Work Sans', sans-serif;
+	display: flex;
+	text-align: center;
+	justify-content: center;
 }
 
 h2 {
@@ -36,65 +33,101 @@ h3 {
 	font-family: 'Work Sans', sans-serif;
 }
 
+/*Header*/
 
+.header {
+	padding: 2rem;
+}
+
+.header img {
+	display: block;
+	align-items: flex-start;
+	height: 70px;
+	width: 70px;
+}
 
 /* Wetterbox */
+
 .weather_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
-	padding: 2rem;
+	padding: 2%;
 	border-radius: 20px;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 	text-align: center;
-	margin-bottom: 2rem;
-	font-size: 1.4rem;
+	margin-bottom: 10rem;
+	margin-top: 5rem;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	font-size: 3rem;
 	color: #444;
 	font-family: 'Work Sans', sans-serif;
-
+	width: auto;
 }
 
-.weather_container h2 {
-	font-size: 1.6rem;
+.weather_container h1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.weather_container>.weather_item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 120px;
+}
+
+.weather_item h2 {
+	font-size: 1.2rem;
 	margin-bottom: 0.5rem;
-}
-
-.weather_icon {
-	width: 70px;
-	height: auto;
-	margin: 1rem auto;
+	text-align: center;
 	display: block;
-	font-family: 'Work Sans', sans-serif;
 }
 
-
-.celsius {
-	font-size: 2.4rem;
-	font-weight: bold;
-	color: #e76f51;
-	margin-top: 0.5rem;
-	font-family: 'Work Sans', sans-serif;
-}
-
-.wind_speed,
-.rain_mm {
-	font-size: 1rem;
-	color: #444;
-	margin: 0.3rem 0;
+.weather_item img {
+	width: 100px;
+	height: auto;
 }
 
 /* Raumempfehlung */
+
 .recommendation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
 	background: #fdf1f1;
-	border-left: 6px solid #f47c7c;
 	padding: 1rem 1.5rem;
-	border-radius: 12px;
-	margin-bottom: 2rem;
-	font-size: 1.1rem;
-	font-weight: 500;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	border-radius: 20px;
+	margin-bottom: 10rem;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	box-shadow: #e76464;
+}
+
+.recommendation img {
+	height: 250px;
+	min-width: 400px;
+}
+
+.recommendation p {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
+	font-family: 'Work Sans', sans-serif;
+	border-bottom-style: outset;
 }
 
 /* Buttons (optional) */
 .button {
+	display: flex;
+	justify-content: center;
 	background: #f47c7c;
 	color: white;
 	border: none;
@@ -103,6 +136,7 @@ h3 {
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.3s ease;
+	margin-bottom: 10rem;
 }
 
 .button:hover {

@@ -6,39 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura:wght@500&display=swap" /> -->
-  <title>Hier wird gefetcht</title>
+  <title>Do the reit thing!</title>
+
+  <section class="header">
+    <img class="Logo" alt="" src="sonst_icons/rs_logo.jpg">
+
+  </section>
 </head>
 
 <body>
-  <h1>Hoi Reitschule Wetter aber jetzt für echt </h1>
-
   <section id="weather_container" class="weather_container">
+    <h1>WETTER IN BERN</h1>
     <!-- //Wird mit JS befüllt.  -->
-    <div class="wetter-in-bern">
-      <h1>WETTER IN BERN</h1>
+
+    <div class="weather_item">
+      <h2 class="celsius"> </h2>
+      <img class="temp_icon" alt="" src="weather_icons/hot.png">
     </div>
 
-    <h2 class="celsius"> </h2>
-    <div><img class="temp_icon" alt="" src="weather_icons/hot.png"></div>
+    <div class="weather_item">
+      <h2 class="rain_mm">100mm Regen erwartet</h2>
+      <img class="rain_icon" alt="" src="weather_icons/rain.png">
+    </div>
 
-    <h2 class="rain_mm">100mm Regen erwartet</h2>
-    <div><img class="rain_icon" alt="" src="weather_icons/rain.png"></div>
-
-    <h2 class="wind_speed">kein wind</h2>
-    <div><img class="wind_icon" alt="" src="weather_icons/wind.png"></div>
-
-    <h2 class="weather"></h2>
-    <div><img class="weather_icon" alt="" src="weather_icons/"></div>
+    <div class="weather_item">
+      <h2 class="wind_speed">kein wind</h2>
+      <img class="wind_icon" alt="" src="weather_icons/wind.png">
+    </div>
 
   </section>
 
   <button id="scroll_to_result" class="button">Zeige Raum-Empfehlung</button>
 
-  <h2>
-    <div id="result_container" class="recommendation">
-      <!-- //Wird mit JS befüllt.  -->
-    </div>
-  </h2>
+  <div class="Raum-Empfehlung">
+    <h1>Empfohlener Raum</h1>
+  </div>
+
+  <div id="result_container" class="recommendation">
+    <img class="image">
+    <h2 class="name">Raumname</h2>
+  </div>
+
   <script type="module" src="js/script.js"></script>
 </body>
 

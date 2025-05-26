@@ -43,7 +43,7 @@ if (regen) {
 let icon = '';
 let text = '';
 
-if (data.current.weather_code === 0 || data.current.weather_code === 0) {
+if (data.current.weather_code === 0) {
     icon =
         '/weather_icons/clear_sky_0.png'
     text = 'Klarer Himmel'
@@ -59,7 +59,7 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
     icon =
         '/weather_icons/drizzle_51_53_55.png'
     text = 'Nieselregen'
-} else if (data.current.weather_code === 61 || data.current.weather_code === 63 || data.current.eather_code === 65) {
+} else if (data.current.weather_code === 61 || data.current.weather_code === 63 || data.current.weather_code === 65) {
     icon =
         '/weather_icons/rain_61_63_65.png'
     text = 'Regen'
@@ -102,15 +102,34 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
 //     <img src="${icon}" width="100">
 //      <p>${text}<p>`;
 
-weather_container.innerHTML += `
-<h3>${text}<h3>
-    <img src="${icon}" width="100">`;
+// Neuen Container für Wettercode erstellen
+const weatherItem = document.createElement('div');
+weatherItem.classList.add('weather_item');
+
+// Text (h2) hinzufügen
+const weatherText = document.createElement('h2');
+weatherText.innerText = text;
+
+// Icon (img) hinzufügen
+const weatherImg = document.createElement('img');
+weatherImg.src = icon;
+weatherImg.alt = text;
+weatherImg.width = 100;
+
+// Elemente einfügen
+weatherItem.appendChild(weatherText);
+weatherItem.appendChild(weatherImg);
+
+// In den Container einfügen
+weather_container.appendChild(weatherItem);
+
 
 // const weatherIconElement = document.querySelector('.weather_icon');
 // if (weatherIconElement) {
 //     weatherIconElement.src = icon;
 //     weatherIconElement.alt = text;
 // }
+
 
 // algorithmus für die Räume
 let wind_speed = data.current.wind_speed_10m;
@@ -324,9 +343,7 @@ if (possible_options.length > 0) {
 
     // Hier haben wir einen div mit der id='result_container' im HTML gemacht, so wird es nicht nur in der Konsole sondern auch im HTML angezeigt 
     const resultContainer = document.querySelector('#result_container');
-    //  resultContainer.innerHTML = `<h3>Empfohlener Raum:</h3><p>${selectedOption.name}</p>`;
     resultContainer.innerHTML = `
-  <h3>Empfohlener Raum:</h3>
   <p>${selectedOption.name}</p>
   ${selectedOption.image ? `<img src="${selectedOption.image}" alt="${selectedOption.name}" width="200">` : ''}
 `;
@@ -337,6 +354,7 @@ if (possible_options.length > 0) {
     resultContainer.innerHTML = `<p>Leider passt aktuell kein Raum zu den Wetterbedingungen.</p>`;
 }
 
-document.querySelector('#scroll_to_result').addEventListener('click', () => {
-    document.querySelector('#result_container').scrollIntoView({ behavior: 'smooth' });
+document.getElementById("scroll_to_result").addEventListener("click", () => {
+    document.getElementById("result_container").scrollIntoView({ behavior: "smooth" });
 });
+
