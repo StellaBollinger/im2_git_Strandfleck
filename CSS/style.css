@@ -1,82 +1,88 @@
-Allgemeines Layout
-body {
+Allgemeines Layout body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Work Sans', sans-serif;
 	background: #f7f8fc;
 	color: #333;
-  }
-  
-  /* Container-Zentrale */
-  .container {
+}
+
+/* Container-Zentrale */
+.container {
 	max-width: 800px;
 	margin: 2rem auto;
 	padding: 1.5rem;
 	background: white;
 	border-radius: 16px;
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  }
-  
-  /* Überschriften */
-  h1, h2, h3 {
+}
+
+/* Überschriften */
+h1 {
+	font-size: 2rem;
+	letter-spacing: 1px;
+	font-family: 'Work Sans', sans-serif;
+}
+
+h2 {
+	font-size: 1.4rem;
+	color: #444;
+	font-family: 'Work Sans', sans-serif;
+}
+
+h3 {
 	text-align: center;
 	color: #2b2d42;
 	margin-bottom: 1rem;
 	font-family: 'Work Sans', sans-serif;
-  }
-  
-  h1 {
-	font-size: 2rem;
-	letter-spacing: 1px;
-  }
-  
-  h2 {
-	font-size: 1.4rem;
-	color: #444;
-	font-family: 'Work Sans', sans-serif;
-  }
-  
-  /* Wetterbox */
-  .weather_container {
+}
+
+
+
+/* Wetterbox */
+.weather_container {
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 2rem;
 	border-radius: 20px;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 	text-align: center;
 	margin-bottom: 2rem;
-  }
-  
-  .weather_container h3 {
+	font-size: 1.4rem;
+	color: #444;
+	font-family: 'Work Sans', sans-serif;
+
+}
+
+.weather_container h2 {
 	font-size: 1.6rem;
 	margin-bottom: 0.5rem;
-  }
-  
-  .weather_icon {
+}
+
+.weather_icon {
 	width: 70px;
 	height: auto;
 	margin: 1rem auto;
 	display: block;
 	font-family: 'Work Sans', sans-serif;
-  }
+}
 
-  
-  .celsius {
+
+.celsius {
 	font-size: 2.4rem;
 	font-weight: bold;
 	color: #e76f51;
 	margin-top: 0.5rem;
 	font-family: 'Work Sans', sans-serif;
-  }
-  
-  .wind_speed,
-  .rain_mm {
+}
+
+.wind_speed,
+.rain_mm {
 	font-size: 1rem;
 	color: #444;
 	margin: 0.3rem 0;
-  }
-  
-  /* Raumempfehlung */
-  .recommendation {
+}
+
+/* Raumempfehlung */
+.recommendation {
 	background: #fdf1f1;
 	border-left: 6px solid #f47c7c;
 	padding: 1rem 1.5rem;
@@ -85,17 +91,10 @@ body {
 	font-size: 1.1rem;
 	font-weight: 500;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* Ladeanimation oder Placeholder */
-  .loading {
-	text-align: center;
-	font-size: 1.2rem;
-	color: #999;
-  }
-  
-  /* Buttons (optional) */
-  .button {
+}
+
+/* Buttons (optional) */
+.button {
 	background: #f47c7c;
 	color: white;
 	border: none;
@@ -104,9 +103,8 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.3s ease;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
 	background: #e76464;
-  }
-  
+}

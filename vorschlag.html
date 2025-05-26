@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,38 @@
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura:wght@500&display=swap" /> -->
   <title>Hier wird gefetcht</title>
 </head>
+
 <body>
   <h1>Hoi Reitschule Wetter aber jetzt für echt </h1>
 
-  <section id ="weather_container" class="weather_container">
+  <section id="weather_container" class="weather_container">
     <!-- //Wird mit JS befüllt.  -->
-    <div class="wetter-in-bern"><h1>WETTER IN BERN</h1></div>
+    <div class="wetter-in-bern">
+      <h1>WETTER IN BERN</h1>
+    </div>
 
-      <div class="celsius"></div>
-      <div class="temp_icon"></div>
- 
-      <h2 class="rain_mm">100mm Regen erwartet</h2>
-      <div><img class="rain_icon" alt="" src="weather_icons/rain.png"></div>
+    <h2 class="celsius"> </h2>
+    <div><img class="temp_icon" alt="" src="weather_icons/hot.png"></div>
 
+    <h2 class="rain_mm">100mm Regen erwartet</h2>
+    <div><img class="rain_icon" alt="" src="weather_icons/rain.png"></div>
 
-    <h2>
-      <div class="wind_speed">kein Wind
-            <img class="wind_icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-       </div> 
-    </h2>
+    <h2 class="wind_speed">kein wind</h2>
+    <div><img class="wind_icon" alt="" src="weather_icons/wind.png"></div>
 
-    <h2>
-      <div class="wind_speed">kein Wind
-            <img class="wind_icon" alt="" src="Weather_Code_svg/UmtauschenBitte.jpg">
-       </div> 
-    </h2>
+    <h2 class="weather"></h2>
+    <div><img class="weather_icon" alt="" src="weather_icons/"></div>
 
   </section>
 
   <button id="scroll_to_result" class="button">Zeige Raum-Empfehlung</button>
 
   <h2>
-    <div id ="result_container" class="recommendation">
-    <!-- //Wird mit JS befüllt.  -->
+    <div id="result_container" class="recommendation">
+      <!-- //Wird mit JS befüllt.  -->
     </div>
   </h2>
   <script type="module" src="js/script.js"></script>
 </body>
-</html> 
+
+</html>
