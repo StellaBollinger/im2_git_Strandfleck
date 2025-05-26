@@ -33,6 +33,12 @@ h3 {
 	font-family: 'Work Sans', sans-serif;
 }
 
+h4 {
+	font-size: 3rem;
+	color: #444;
+	font-family: 'Work Sans', sans-serif;
+}
+
 /*Header*/
 
 .header {
@@ -45,6 +51,28 @@ h3 {
 	height: 70px;
 	width: 70px;
 }
+
+/* Buttons (optional) */
+.button {
+	display: flex;
+	justify-content: right;
+	float: right;
+	background: #f47c7c;
+	color: white;
+	border: none;
+	padding: 0.8rem 1.2rem;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	margin-right: 10rem;
+	margin-bottom: 10rem;
+}
+
+.button:hover {
+	background: #e76464;
+}
+
 
 /* Wetterbox */
 
@@ -95,6 +123,22 @@ h3 {
 	height: auto;
 }
 
+/* Do the reit thing */
+
+.reit_thing {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding: 0.8rem 1.2rem;
+	width: auto;
+	height: 130px;
+	margin-bottom: 10rem;
+	margin-left: 10rem;
+	margin-right: 10rem;
+	background: #FF6E6E;
+	box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 /* Raumempfehlung */
 
 .recommendation {
@@ -103,11 +147,9 @@ h3 {
 	align-items: center;
 	justify-content: flex-start;
 	background: #fdf1f1;
-	padding: 1rem 1.5rem;
+	padding: 1rem 1.2rem;
 	border-radius: 20px;
-	margin-bottom: 10rem;
-	margin-left: 10rem;
-	margin-right: 10rem;
+	margin: 10rem;
 	box-shadow: #e76464;
 }
 
@@ -122,23 +164,4 @@ h3 {
 	text-align: center;
 	font-family: 'Work Sans', sans-serif;
 	border-bottom-style: outset;
-}
-
-/* Buttons (optional) */
-.button {
-	display: flex;
-	justify-content: center;
-	background: #f47c7c;
-	color: white;
-	border: none;
-	padding: 0.8rem 1.2rem;
-	border-radius: 8px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: background 0.3s ease;
-	margin-bottom: 10rem;
-}
-
-.button:hover {
-	background: #e76464;
 }
