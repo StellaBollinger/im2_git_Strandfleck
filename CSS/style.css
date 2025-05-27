@@ -6,9 +6,7 @@ Allgemeines Layout body {
 	color: #333;
 }
 
-.body {
-	margin: 100%;
-}
+
 
 /* Überschriften */
 h1 {
@@ -65,36 +63,49 @@ h4 {
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.3s ease;
-	margin-right: 10rem;
-	margin-bottom: 10rem;
 }
 
 .button:hover {
 	background: #e76464;
 }
 
+.main_wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.weather_container,
+.recommendation,
+.reit_thing {
+	max-width: 1000px;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 5rem auto;
+	/* automatisch zentriert */
+}
 
 /* Wetterbox */
 
 .weather_container {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-wrap: wrap;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
-	padding: 2%;
+	padding: 2rem;
 	border-radius: 20px;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-	text-align: center;
-	margin-bottom: 10rem;
-	margin-top: 5rem;
-	margin-left: 10rem;
-	margin-right: 10rem;
+	margin: 5rem auto 10rem auto;
 	font-size: 3rem;
 	color: #444;
 	font-family: 'Work Sans', sans-serif;
-	width: auto;
+	max-width: 1000px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .weather_container h1 {
@@ -103,7 +114,7 @@ h4 {
 	justify-content: center;
 }
 
-.weather_container>.weather_item {
+.weather_item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -115,23 +126,20 @@ h4 {
 	font-size: 1.2rem;
 	margin-bottom: 0.5rem;
 	text-align: center;
-	display: block;
 }
 
 .weather_item img {
+	flex: row;
 	width: 100px;
-	height: auto;
+	height: 100px;
+	object-fit: cover;
 }
 
 /* Do the reit thing */
 
 .reit_thing {
-	display: flex;
-	align-items: center;
 	text-align: center;
 	padding: 0.8rem 1.2rem;
-	width: auto;
-	height: 130px;
 	margin-bottom: 10rem;
 	margin-left: 10rem;
 	margin-right: 10rem;
@@ -142,10 +150,6 @@ h4 {
 /* Raumempfehlung */
 
 .recommendation {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
 	background: #fdf1f1;
 	padding: 1rem 1.2rem;
 	border-radius: 20px;
@@ -155,7 +159,10 @@ h4 {
 
 .recommendation img {
 	height: 250px;
-	min-width: 400px;
+	width: auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
 }
 
 .recommendation p {

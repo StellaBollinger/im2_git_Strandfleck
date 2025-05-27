@@ -101,10 +101,27 @@ if (data.current.weather_code === 0 || data.current.weather_code === 0) {
 // weather_container.innerHTML('.weather') += `
 //     <img src="${icon}" width="100">
 //      <p>${text}<p>`;
+// Neuen Container für Wettercode erstellen
+const weatherItem = document.createElement('div');
+weatherItem.classList.add('weather_item');
 
-weather_container.innerHTML += `
-<h2>${text}<h2>
-    <img src="${icon}" width="100">`;
+// Text (h2) hinzufügen
+const weatherText = document.createElement('h2');
+weatherText.innerText = text;
+
+// Icon (img) hinzufügen
+const weatherImg = document.createElement('img');
+weatherImg.src = icon;
+weatherImg.alt = text;
+weatherImg.width = 100;
+
+// Elemente einfügen
+weatherItem.appendChild(weatherText);
+weatherItem.appendChild(weatherImg);
+
+// In den Container einfügen
+weather_container.appendChild(weatherItem);
+
 
 // const weatherIconElement = document.querySelector('.weather_icon');
 // if (weatherIconElement) {
