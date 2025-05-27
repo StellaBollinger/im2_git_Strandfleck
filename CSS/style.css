@@ -1,42 +1,38 @@
-Allgemeines Layout body {
+body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Work Sans', sans-serif;
-	background: #f7f8fc;
+	background: whites;
 	color: #333;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Work Sans', sans-serif;
+	text-align: center;
+}
 
-
-/* Überschriften */
 h1 {
 	font-size: 2rem;
-	letter-spacing: 1px;
-	font-family: 'Work Sans', sans-serif;
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	margin-top: 15.936px;
+	margin-top: 16px;
 }
 
 h2 {
 	font-size: 1.4rem;
 	color: #444;
-	font-family: 'Work Sans', sans-serif;
 }
 
-h3 {
-	text-align: center;
-	color: #2b2d42;
-	margin-bottom: 1rem;
-	font-family: 'Work Sans', sans-serif;
+h4,
+h5 {
+	font-size: 3rem;
+	margin: 2rem;
 }
 
 h4 {
-	font-size: 3rem;
 	color: white;
-	font-family: 'Work Sans', sans-serif;
-	margin: 2rem;
 }
 
 h4:hover {
@@ -44,56 +40,58 @@ h4:hover {
 }
 
 h5 {
-	font-size: 3rem;
 	color: #444;
-	font-family: 'Work Sans', sans-serif;
-	margin: 2rem;
 }
 
-/*Header*/
-
+/* Header */
 .header {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
 	justify-content: space-between;
-	margin: 5% auto 2% auto;
+	align-items: center;
 	max-width: 1000px;
-	width: 100%;
+	margin: 5% auto 2%;
 }
 
 .header img {
-	align-items: flex-start;
-	height: 70px;
 	width: 70px;
+	height: 70px;
 }
 
-/* Buttons (optional) */
-.button_recommendation {
-	height: 70px;
-	align-items: center;
+/* Buttons */
+.button_recommendation,
+.button_reit {
 	background: #FF6E6E;
 	color: white;
-	margin: 30px, 30px, 30px, 0px;
 	padding: 0.8rem 1.2rem;
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.3s ease;
-	box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.25);
-	border-color: #2b2d42;
-	border-style: double;
+	box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+	border: double #2b2d42;
 }
 
-.button_recommendation:hover {
+.button_recommendation {
+	height: 70px;
+}
+
+.button_recommendation:hover,
+.button_reit:hover {
 	background: #fdf1f1;
 	color: #e76464;
 }
 
+.button_reit {
+	font-size: 3rem;
+	padding: 2rem;
+	width: 100%;
+	max-width: 1000px;
+}
+
+/* Layout */
 .main_wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 	width: 100%;
 }
 
@@ -102,121 +100,62 @@ h5 {
 .reit_thing {
 	max-width: 1000px;
 	width: 100%;
+	margin: 2% auto;
 	box-sizing: border-box;
-	margin: 2% auto 2% auto;
-	/* automatisch zentriert */
 }
-
-/* Wetterbox */
 
 .weather_container {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: flex-start;
 	flex-wrap: wrap;
+	justify-content: space-evenly;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 2rem;
-	box-shadow: -10px 10px 4px 0px #e76464;
-	margin: 2% auto 2% auto;
-	font-size: 3rem;
-	color: #444;
-	font-family: 'Work Sans', sans-serif;
-	max-width: 1000px;
-	width: 100%;
-	box-sizing: border-box;
-	border-color: #2b2d42;
-	border-style: double;
-}
-
-.weather_container h1 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	border: double #2b2d42;
+	box-shadow: -10px 10px 4px #e76464;
 }
 
 .weather_item {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
 	width: 120px;
+	text-align: center;
 }
 
 .weather_item h2 {
 	font-size: 1.2rem;
 	margin-bottom: 0.5rem;
-	text-align: center;
 }
 
 .weather_item img {
-	flex: row;
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
 }
 
-/* Do the reit thing */
-
-.button_reit {
-	text-align: center;
-	color: white;
-	padding: 2rem;
-	margin: 2% auto 2% auto;
-	max-width: 1000px;
-	width: 100%;
-	background: #FF6E6E;
-	box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.25);
-	border-color: #2b2d42;
-	border-style: double;
-	font-size: 3rem;
-	color: white;
-	font-family: 'Work Sans', sans-serif;
-
-}
-
-.button_reit:hover {
-	background: #fdf1f1;
-	color: red;
-	transition: 0.3s ease;
-}
-
-/* Raumempfehlung */
-
+/* Empfehlung */
 .recommendation {
 	text-align: center;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 1rem 1.2rem;
-	margin: 10rem;
-	box-shadow: -10px 10px 4px 0px #e76464;
-	border-color: #2b2d42;
-	border-style: double;
+	margin: 10rem auto;
+	box-shadow: -10px 10px 4px #e76464;
+	border: double #2b2d42;
 }
 
 .recommendation img {
 	height: 20rem;
 	width: auto;
-	max-width: 100%;
 	display: block;
-	margin: auto auto 2rem auto;
+	margin: 0 auto 2rem;
 }
 
-.recommendation p {
-	font-size: 2rem;
-	margin-bottom: 2rem;
-	text-align: center;
-	font-family: 'Work Sans', sans-serif;
-}
-
-/* Responsive Design für Tablets (z. B. iPad) */
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
-
-	/* reit_thing ausblenden */
 	.reit_thing {
 		display: none;
 	}
 
-	/* Wetter-Items in zwei Spalten */
 	.weather_container {
 		justify-content: center;
 		gap: 2rem;
@@ -224,12 +163,10 @@ h5 {
 
 	.weather_item {
 		width: 30%;
-		/* zwei nebeneinander */
 		max-width: 200px;
 	}
 }
 
-/* Responsive Design für Smartphones */
 @media screen and (max-width: 768px) {
 	.main_wrapper {
 		padding: 1rem;
@@ -258,9 +195,9 @@ h5 {
 	}
 
 	.recommendation img {
-		height: auto;
 		width: 100%;
 		max-width: 300px;
+		height: auto;
 	}
 
 	.recommendation p {
@@ -270,11 +207,4 @@ h5 {
 	.reit_thing {
 		display: none;
 	}
-
-	.button {
-		margin: 2rem auto;
-		float: none;
-		justify-content: center;
-	}
-
 }
