@@ -16,6 +16,7 @@ h1 {
 	display: flex;
 	text-align: center;
 	justify-content: center;
+	margin-top: 15.936px;
 }
 
 h2 {
@@ -33,40 +34,59 @@ h3 {
 
 h4 {
 	font-size: 3rem;
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+	margin: 2rem;
+}
+
+h4:hover {
+	color: #e76464;
+}
+
+h5 {
+	font-size: 3rem;
 	color: #444;
 	font-family: 'Work Sans', sans-serif;
+	margin: 2rem;
 }
 
 /*Header*/
 
 .header {
-	padding: 2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 5% auto 2% auto;
+	max-width: 1000px;
+	width: 100%;
 }
 
 .header img {
-	display: block;
 	align-items: flex-start;
 	height: 70px;
 	width: 70px;
 }
 
 /* Buttons (optional) */
-.button {
-	display: flex;
-	justify-content: right;
-	float: right;
-	background: #f47c7c;
+.button_recommendation {
+	height: 70px;
+	align-items: center;
+	background: #FF6E6E;
 	color: white;
-	border: none;
+	margin: 30px, 30px, 30px, 0px;
 	padding: 0.8rem 1.2rem;
-	border-radius: 8px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: background 0.3s ease;
+	box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+	border-color: #2b2d42;
+	border-style: double;
 }
 
-.button:hover {
-	background: #e76464;
+.button_recommendation:hover {
+	background: #fdf1f1;
+	color: #e76464;
 }
 
 .main_wrapper {
@@ -83,7 +103,7 @@ h4 {
 	max-width: 1000px;
 	width: 100%;
 	box-sizing: border-box;
-	margin: 5rem auto;
+	margin: 2% auto 2% auto;
 	/* automatisch zentriert */
 }
 
@@ -97,15 +117,16 @@ h4 {
 	flex-wrap: wrap;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 2rem;
-	border-radius: 20px;
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-	margin: 5rem auto 10rem auto;
+	box-shadow: -10px 10px 4px 0px #e76464;
+	margin: 2% auto 2% auto;
 	font-size: 3rem;
 	color: #444;
 	font-family: 'Work Sans', sans-serif;
 	max-width: 1000px;
 	width: 100%;
 	box-sizing: border-box;
+	border-color: #2b2d42;
+	border-style: double;
 }
 
 .weather_container h1 {
@@ -137,87 +158,54 @@ h4 {
 
 /* Do the reit thing */
 
-.reit_thing {
+.button_reit {
 	text-align: center;
-	padding: 0.8rem 1.2rem;
-	margin-bottom: 10rem;
-	margin-left: 10rem;
-	margin-right: 10rem;
+	color: white;
+	padding: 2rem;
+	margin: 2% auto 2% auto;
+	max-width: 1000px;
+	width: 100%;
 	background: #FF6E6E;
 	box-shadow: -10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+	border-color: #2b2d42;
+	border-style: double;
+	font-size: 3rem;
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+
+}
+
+.button_reit:hover {
+	background: #fdf1f1;
+	color: red;
+	transition: 0.3s ease;
 }
 
 /* Raumempfehlung */
 
 .recommendation {
-	background: #fdf1f1;
+	text-align: center;
+	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 1rem 1.2rem;
-	border-radius: 20px;
 	margin: 10rem;
-	box-shadow: #e76464;
+	box-shadow: -10px 10px 4px 0px #e76464;
+	border-color: #2b2d42;
+	border-style: double;
 }
 
 .recommendation img {
-	height: 250px;
+	height: 20rem;
 	width: auto;
 	max-width: 100%;
 	display: block;
-	margin: 0 auto;
+	margin: auto auto 2rem auto;
 }
 
 .recommendation p {
 	font-size: 2rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 2rem;
 	text-align: center;
 	font-family: 'Work Sans', sans-serif;
-	border-bottom-style: outset;
-}
-
-/* Responsive Design für Smartphones */
-@media screen and (max-width: 768px) {
-	.main_wrapper {
-		padding: 1rem;
-	}
-
-	.weather_container {
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		padding: 1rem;
-		margin: 2rem auto;
-	}
-
-	.weather_item {
-		width: 100%;
-		max-width: 200px;
-	}
-
-	.recommendation {
-		margin: 2rem 1rem;
-		padding: 1rem;
-	}
-
-	.recommendation img {
-		height: auto;
-		width: 100%;
-		max-width: 300px;
-	}
-
-	.recommendation p {
-		font-size: 1.4rem;
-	}
-
-	.reit_thing {
-		margin: 2rem 1rem;
-		padding: 1rem;
-		font-size: 1.2rem;
-	}
-
-	.button {
-		margin: 2rem auto;
-		float: none;
-		justify-content: center;
-	}
 }
 
 /* Responsive Design für Tablets (z. B. iPad) */
@@ -235,7 +223,7 @@ h4 {
 	}
 
 	.weather_item {
-		width: 45%;
+		width: 30%;
 		/* zwei nebeneinander */
 		max-width: 200px;
 	}
@@ -245,6 +233,10 @@ h4 {
 @media screen and (max-width: 768px) {
 	.main_wrapper {
 		padding: 1rem;
+	}
+
+	.header {
+		flex-direction: column;
 	}
 
 	.weather_container {
@@ -284,4 +276,5 @@ h4 {
 		float: none;
 		justify-content: center;
 	}
+
 }

@@ -341,9 +341,9 @@ if (possible_options.length > 0) {
 
     // Hier haben wir einen div mit der id='result_container' im HTML gemacht, so wird es nicht nur in der Konsole sondern auch im HTML angezeigt 
     const resultContainer = document.querySelector('#result_container');
-    //  resultContainer.innerHTML = `<h3>Empfohlener Raum:</h3><p>${selectedOption.name}</p>`;
+    //  resultContainer.innerHTML = `<h4>Empfohlener Raum:</h4><p>${selectedOption.name}</p>`;
     resultContainer.innerHTML = `
-  <h3>Empfohlener Raum:</h3>
+  <h5>Empfohlener Raum:</h5>
   <p>${selectedOption.name}</p>
   ${selectedOption.image ? `<img src="${selectedOption.image}" alt="${selectedOption.name}" width="200">` : ''}
 `;
@@ -354,6 +354,11 @@ if (possible_options.length > 0) {
     resultContainer.innerHTML = `<p>Leider passt aktuell kein Raum zu den Wetterbedingungen.</p>`;
 }
 
-document.querySelector('#scroll_to_result').addEventListener('click', () => {
+
+function scroll_to_result() {
     document.querySelector('#result_container').scrollIntoView({ behavior: 'smooth' });
-});
+}
+
+document.querySelector('#scroll_to_result').addEventListener('click', scroll_to_result);
+document.querySelector('#scroll_down').addEventListener('click', scroll_to_result);
+
