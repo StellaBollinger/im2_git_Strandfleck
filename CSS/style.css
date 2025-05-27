@@ -172,3 +172,116 @@ h4 {
 	font-family: 'Work Sans', sans-serif;
 	border-bottom-style: outset;
 }
+
+/* Responsive Design für Smartphones */
+@media screen and (max-width: 768px) {
+	.main_wrapper {
+		padding: 1rem;
+	}
+
+	.weather_container {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding: 1rem;
+		margin: 2rem auto;
+	}
+
+	.weather_item {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	.recommendation {
+		margin: 2rem 1rem;
+		padding: 1rem;
+	}
+
+	.recommendation img {
+		height: auto;
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.recommendation p {
+		font-size: 1.4rem;
+	}
+
+	.reit_thing {
+		margin: 2rem 1rem;
+		padding: 1rem;
+		font-size: 1.2rem;
+	}
+
+	.button {
+		margin: 2rem auto;
+		float: none;
+		justify-content: center;
+	}
+}
+
+/* Responsive Design für Tablets (z. B. iPad) */
+@media screen and (max-width: 1024px) {
+
+	/* reit_thing ausblenden */
+	.reit_thing {
+		display: none;
+	}
+
+	/* Wetter-Items in zwei Spalten */
+	.weather_container {
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.weather_item {
+		width: 45%;
+		/* zwei nebeneinander */
+		max-width: 200px;
+	}
+}
+
+/* Responsive Design für Smartphones */
+@media screen and (max-width: 768px) {
+	.main_wrapper {
+		padding: 1rem;
+	}
+
+	.weather_container {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		padding: 1rem;
+		margin: 2rem auto;
+	}
+
+	.weather_item {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	.recommendation {
+		margin: 2rem 1rem;
+		padding: 1rem;
+	}
+
+	.recommendation img {
+		height: auto;
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.recommendation p {
+		font-size: 1.4rem;
+	}
+
+	.reit_thing {
+		display: none;
+	}
+
+	.button {
+		margin: 2rem auto;
+		float: none;
+		justify-content: center;
+	}
+}
