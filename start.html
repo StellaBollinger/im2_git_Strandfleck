@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Start</title>
+
+    <section class="header">
+        <a href="https://reitschule.ch/reitschule/" target="_blank">
+            <img class="Logo" alt="" src="sonst_icons/rs_logo.jpg">
+        </a>
+    </section>
+</head>
+
+<body>
+    <div class="main_wrapper">
+        <!-- User Interaction Section -->
+        <section class="user_interaction">
+            <button id="start_button" class="start_button">
+                Was soll ich heute in der Reitschule machen?
+            </button>
+        </section>
+
+        <!-- Loading Screen -->
+        <div id="loading_screen" class="loading_screen" style="display: none;">
+            <h5 id="loading_text"></h5>
+            <div class="loading_bar_container">
+                <div id="loading_bar" class="loading_bar"></div>
+            </div>
+            <img class="loading_image" alt="Loading Image" src="sonst_icons/elefant_love.png">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('start_button');
+            const loadingScreen = document.getElementById('loading_screen');
+            const loadingText = document.getElementById('loading_text');
+            const loadingBar = document.getElementById('loading_bar');
+
+            startButton.addEventListener('click', () => {
+                // Hide the start button
+                startButton.style.display = 'none';
+
+                // Show the loading screen
+                loadingScreen.style.display = 'block';
+
+                // Display "Loading..." step by step
+                const text = "Loading...";
+                let index = 0;
+
+                const interval = setInterval(() => {
+                    if (index < text.length) {
+                        loadingText.textContent += text[index];
+                        index++;
+
+                        // Update loading bar width
+                        loadingBar.style.width = `${(index / text.length) * 100}%`;
+                    } else {
+                        clearInterval(interval);
+
+                        // Redirect to index.html after loading
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000); // 1 second delay after "Loading..." is complete
+                    }
+                }, 300); // 300ms delay between each letter
+            });
+        });
+    </script>
+</body>
+
+</html>

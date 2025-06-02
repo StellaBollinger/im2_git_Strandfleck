@@ -22,6 +22,7 @@ const weather_container = document.querySelector('.weather_container');
                              <p>Niederschlag: ${data.current.precipitation} mm</p>
                              <p>Wettercode: ${data.current.weather_code}</p>`;
 // OpenMeteo Loader Ende
+
 const temp = document.querySelector('.celsius');
 if (temp) {
     temp.innerText = `${data.current.temperature_2m}°C`;

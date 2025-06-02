@@ -1,9 +1,23 @@
 body {
 	margin: 0;
 	padding: 0;
+	overflow-x: hidden;
 	font-family: 'Work Sans', sans-serif;
 	background: whites;
 	color: #333;
+}
+
+html {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.main_wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 h1,
@@ -48,18 +62,27 @@ h5 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
 	max-width: 1000px;
 	margin: 5% auto 2%;
 }
 
 .header img {
-	width: 70px;
-	height: 70px;
+	height: 120px;
+	width: auto;
+	transition: transform 0.5s ease;
+}
+
+.header img:hover {
+	transform: scale(1.1);
+	/* Slightly enlarge the image on hover */
 }
 
 /* Buttons */
+
 .button_recommendation,
-.button_reit {
+.button_reit,
+.start_button {
 	background: #FF6E6E;
 	color: white;
 	padding: 0.8rem 1.2rem;
@@ -75,28 +98,95 @@ h5 {
 }
 
 .button_recommendation:hover,
-.button_reit:hover {
+.button_reit:hover,
+.start_button:hover {
 	background: #fdf1f1;
 	color: #e76464;
 }
 
-.button_reit {
+.button_reit,
+.start_button {
 	font-size: 3rem;
 	padding: 2rem;
 	width: 100%;
 	max-width: 1000px;
+	text-align: center;
 }
 
-/* Layout */
-.main_wrapper {
+.user_interaction {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+	/* Full viewport height */
+}
+
+.loading_screen {
 	display: flex;
 	flex-direction: column;
+	/* Stack elements vertically */
+	justify-content: center;
 	align-items: center;
+	margin-top: 4%;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
+	z-index: 1000;
+	/* Ensure it appears above other elements */
+}
+
+/* Style the loading text */
+#loading_text {
+	text-align: center;
+	font-size: 3rem;
+	margin: 2rem;
+	color: #e76464;
+	text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Loading bar container */
+.loading_bar_container {
+	width: 100%;
+	max-width: 500px;
+	height: 20px;
+	background-color: #e4e4e4;
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 20px auto;
+}
+
+/* Loading bar */
+.loading_bar {
+	width: 0;
+	height: 100%;
+	background-color: #e76464;
+	transition: width 0.3s ease;
+}
+
+.loading_image {
+	display: block;
+	margin: 20px auto;
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+	border: double #2b2d42;
+	animation: fadeIn 3s ease-in-out;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .weather_container,
-.recommendation,
 .reit_thing {
 	max-width: 1000px;
 	width: 100%;
@@ -131,6 +221,7 @@ h5 {
 	width: 100px;
 	height: 100px;
 	object-fit: cover;
+	transition: transform 0.5s ease;
 }
 
 /* Empfehlung */
@@ -138,9 +229,12 @@ h5 {
 	text-align: center;
 	background: linear-gradient(135deg, #e4d0f0, #cfe4f2);
 	padding: 1rem 1.2rem;
-	margin: 10rem auto;
 	box-shadow: -10px 10px 4px #e76464;
 	border: double #2b2d42;
+	max-width: 1000px;
+	width: 100%;
+	margin: 10rem auto;
+	box-sizing: border-box;
 }
 
 .recommendation img {
@@ -148,10 +242,38 @@ h5 {
 	width: auto;
 	display: block;
 	margin: 0 auto 2rem;
+	transition: transform 0.3s ease;
+}
+
+.weather_item img:hover,
+.recommendation img:hover {
+	transform: scale(1.1);
+	/* Slightly enlarge the image */
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
+
+	.user_interaction {
+		height: auto;
+		padding: 2rem;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.start_button {
+		font-size: 2.5rem;
+		padding: 1.5rem;
+		width: 90%;
+		max-width: 500px;
+
+	}
+
+	.loading_bar_container,
+	.loading_image {
+		max-width: 400px;
+	}
+
 	.reit_thing {
 		display: none;
 	}
@@ -168,12 +290,44 @@ h5 {
 }
 
 @media screen and (max-width: 768px) {
+	.user_interaction {
+		padding: 1.4rem;
+		align-items: center;
+	}
+
+	.start_button {
+		font-size: 2rem;
+		padding: 1.3rem;
+		width: 100%;
+	}
+
+	.loading_screen {
+		margin-top: 20%;
+		/* Add more space below the logo */
+	}
+
+	#loading_text {
+		margin-top: 4rem;
+		/* Add spacing between the logo and text */
+	}
+
+	.loading_bar_container,
+	.loading_image {
+		margin-top: 10%;
+		max-width: 300px;
+
+	}
+
 	.main_wrapper {
 		padding: 1rem;
 	}
 
 	.header {
 		flex-direction: column;
+		position: relative;
+		/* Ensure it stays in its own layout context */
+		z-index: 500;
+		/* Lower z-index than the loading screen */
 	}
 
 	.weather_container {
